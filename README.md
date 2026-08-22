@@ -3,18 +3,11 @@
 [![CI](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/npm/v/boltz-backend.svg)](https://www.npmjs.com/package/boltz-backend)
 
-This is the source of the official Boltz Backend powering swaps at
-[boltz.exchange](https://boltz.exchange/). It enables **non-custodial** swaps
-between different Bitcoin layers. Boltz Backend exposes a RESTful HTTP API that
-can be used to query information like supported pairs as well as to create and
-monitor swaps.
+This is the source of the fork of the official Boltz Backend. It enables **non-custodial** swaps between different Bitcoin layers. Boltz Backend exposes a RESTful HTTP API that can be used to query information like supported pairs as well as to create and monitor swaps.
 
 ## Integrating Boltz?
 
-**Don't integrate the API directly.** Use an official SDK or client library.
-They handle the cryptography, the swap state machine, and fund-recovery edge
-cases for you. See
-**[Clients, SDKs & Libraries](https://api.docs.boltz.exchange/libraries.html)**.
+**Public API must be activated per user** If you want to interact with this fork you have to be enable by IP. Unrestricted Public access to API is no longer supported.
 
 ## Documentation
 
@@ -22,12 +15,7 @@ See the [Boltz API documentation](https://docs.boltz.exchange/v/api).
 
 ## Resources
 
-- Get Help: [Support Center](https://support.boltz.exchange/hc/center/)
-- Read the Docs: [Docs Home](https://docs.boltz.exchange/)
-- Read our Blog: [Substack](https://blog.boltz.exchange/)
-- Follow us: [X/Twitter](https://twitter.com/Boltzhq) |
-  [Nostr](https://primal.net/p/nprofile1qqsqcdcltmv4qanpx3p7svcufdsg9rkk00x7l2sknra4e6whkv59l7clgcdzj)
+- Read the Boltz Docs: [Docs Home](https://docs.boltz.exchange/)
+- Read our Boltz Blog: [Substack](https://blog.boltz.exchange/)
 - Open a Lightning channel with us:
-  [CLN](https://amboss.space/node/02d96eadea3d780104449aca5c93461ce67c1564e2e1d73225fa67dd3b997a6018)
-  |
-  [LND](https://amboss.space/node/026165850492521f4ac8abd9bd8088123446d126f648ca35e60f88177dc149ceb2)
+  [LND](https://amboss.space/node/0317235909659a67918dde7786b4986319c68165b72893877e0ff64a973bc62395)
