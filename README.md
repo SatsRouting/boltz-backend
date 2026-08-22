@@ -5,10 +5,6 @@
 
 This is the source of the fork of the official Boltz Backend. It enables **non-custodial** swaps between different Bitcoin layers. Boltz Backend exposes a RESTful HTTP API that can be used to query information like supported pairs as well as to create and monitor swaps.
 
-## Integrating Boltz?
-
-**Public API must be activated per user** If you want to interact with this fork you have to be enable by IP. Unrestricted Public access to API is no longer supported.
-
 ## Documentation
 
 See the [Boltz API documentation](https://docs.boltz.exchange/v/api).
