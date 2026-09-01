@@ -1,4 +1,4 @@
-# Boltz Backend
+# SatsRouting (Boltz) Backend
 
 [![CI](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/npm/v/boltz-backend.svg)](https://www.npmjs.com/package/boltz-backend)
