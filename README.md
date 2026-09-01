@@ -19,7 +19,7 @@ See the [Boltz API documentation](https://docs.boltz.exchange/v/api).
 
 Our fork of this project is intentionally scoped to **Bitcoin, Liquid Bitcoin (L-BTC), and Lightning only**. We do not maintain or operate any altcoin, EVM-family (Ethereum/Rootstock/Arbitrum), Solana, Tron, or bridge/token integrations, and we do not plan to. This deliberately narrow focus keeps the codebase we actually run smaller and easier to reason about from a security standpoint, and it shaped how the audit findings below were triaged.
 
-Following a third-party security audit (Bitcoin Red Team), a series of hardening fixes was reviewed, applied, and verified on the backend. Each finding from the audit was triaged into one of three buckets:
+Following a third-party security audit, a series of hardening fixes was reviewed, applied, and verified on the backend. Each finding from the audit was triaged into one of three buckets:
 
 - **Active and relevant** — touches code paths we actually exercise in production (Lightning payment handling, refunds, Liquid asset handling, secrets/logging, API authentication, randomness).
 - **Defensive** — correct and merged, but only exercised on a Liquid edge case (sending a Liquid asset other than L-BTC) that is not part of normal usage today.
@@ -54,7 +54,7 @@ A handful of upstream fixes — covering Core Lightning multi-node setups, cross
 
 ### Conclusion
 
-All audit findings relevant to our operational scope (BTC on-chain, Lightning/LND, Liquid L-BTC) have been applied and verified through live testing. Findings tied to chains or configurations we do not run remain present in the codebase for upstream compatibility, but are inert here; they may be candidates for future removal to reduce attack surface, weighed against the cost of diverging from the upstream project.
+All audit findings relevant to our operational scope (BTC on-chain, Lightning/LND, Liquid L-BTC) have been applied and verified through live testing.
 
 ## Resources
 
