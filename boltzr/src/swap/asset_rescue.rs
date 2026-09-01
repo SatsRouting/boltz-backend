@@ -51,7 +51,7 @@ struct PendingRescue {
 /// Secret MuSig2 signing nonce for a pending asset rescue. Held in-process only
 /// (never serialized to the shared cache) between the create and broadcast
 /// requests so the value whose leak yields the per-swap key cannot be read from
-/// shared infrastructure (SIG-001).
+/// shared infrastructure.
 struct PendingSecNonce {
     sec_nonce: Vec<u8>,
     expires_at: Instant,
@@ -80,7 +80,7 @@ pub struct AssetRescue {
     utxo_mutex: tokio::sync::Mutex<()>,
 
     // Secret MuSig2 signing nonces for pending rescues, kept in this process
-    // only and taken exactly once at broadcast time (SIG-001). Keyed by swap id.
+    // only and taken exactly once at broadcast time. Keyed by swap id.
     sec_nonces: Mutex<HashMap<String, PendingSecNonce>>,
 
     cache: Cache,
@@ -242,7 +242,7 @@ impl AssetRescue {
             )
             .await?;
 
-        // SIG-001: keep the secret signing nonce in-process only. Prune expired
+        // Keep the secret signing nonce in-process only. Prune expired
         // entries first so an abandoned create() (never broadcast) cannot leak
         // memory beyond its TTL.
         {
@@ -291,7 +291,7 @@ impl AssetRescue {
             }
         };
 
-        // SIG-001: take the secret nonce from the in-process store exactly once.
+        // Take the secret nonce from the in-process store exactly once.
         // A missing entry means the rescue was created on a different process /
         // replica or before a restart; it must be re-created (which mints a fresh
         // nonce) rather than reusing anything.
