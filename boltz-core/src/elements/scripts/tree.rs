@@ -49,7 +49,7 @@ impl Tapleaf {
     }
 }
 
-/// The Elements Taproot script tree used by Boltz swaps.
+/// The Elements Taproot script tree used by SatsRouting swaps.
 ///
 /// Layout matches the Bitcoin tree but optionally adds a third covenant
 /// claim leaf for reverse swaps that pin the claim transaction's outputs

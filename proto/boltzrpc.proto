@@ -7,7 +7,7 @@ package boltzrpc;
 service Boltz {
   rpc Stop (StopRequest) returns (StopResponse);
 
-  /* Gets general information about this Boltz instance and the nodes it is connected to */
+  /* Gets general information about this SatsRouting instance and the nodes it is connected to */
   rpc GetInfo (GetInfoRequest) returns (GetInfoResponse);
 
   /* Gets the balance of all wallets */

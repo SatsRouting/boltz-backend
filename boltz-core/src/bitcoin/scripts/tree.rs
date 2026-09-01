@@ -38,7 +38,7 @@ pub struct Tapleaf {
     pub output: ScriptBuf,
 }
 
-/// The two-leaf Taproot script tree used by Boltz swaps.
+/// The two-leaf Taproot script tree used by SatsRouting swaps.
 ///
 /// Both submarine and reverse swaps commit to a tree with one claim leaf
 /// and one refund leaf. The cooperative path is the key-path spend of the

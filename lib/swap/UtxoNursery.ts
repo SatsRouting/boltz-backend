@@ -497,7 +497,7 @@ class UtxoNursery extends TypedEventEmitter<{
     }
 
     // Only persist user claims: the user claims by spending the server's lockup (sendingData).
-    // Spends of the user's lockup (receivingData) are Boltz's own claims. This is independent
+    // Spends of the user's lockup (receivingData) are SatsRouting's own claims. This is independent
     // of the preimage check so cooperative user claims (which reveal nothing) are persisted too.
     const isUserClaim =
       input.txid === swap.sendingData.transactionId &&

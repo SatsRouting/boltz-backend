@@ -379,7 +379,7 @@ class Service {
   };
 
   /**
-   * Gets general information about this Boltz instance and the nodes it is connected to
+   * Gets general information about this SatsRouting instance and the nodes it is connected to
    */
   public getInfo = async (): Promise<GetInfoResponse> => {
     const response: GetInfoResponse = {
@@ -745,7 +745,7 @@ class Service {
   };
 
   /**
-   * Gets the contract address used by the Boltz instance
+   * Gets the contract address used by the SatsRouting instance
    */
   public getContracts = async (): Promise<Contracts> => {
     if (this.walletManager.ethereumManagers.length === 0) {

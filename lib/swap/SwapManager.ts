@@ -121,7 +121,7 @@ type CreatedSwap = {
   swapTree?: SwapTreeSerializer.SerializedTree;
 
   // Specified when either Ether or ERC20 tokens or swapped to Lightning
-  // So that the user can specify the claim address (Boltz) in the lockup transaction to the contract
+  // So that the user can specify the claim address (SatsRouting) in the lockup transaction to the contract
   claimAddress?: string;
 
   // For blinded Liquid swaps
@@ -141,7 +141,7 @@ type CreatedOnchainSwap = {
   refundAddress?: string;
 
   // This is either the generated address for Bitcoin like chains, or the address of the contract
-  // to which Boltz will send the lockup transaction for Ether and ERC20 tokens
+  // to which SatsRouting will send the lockup transaction for Ether and ERC20 tokens
   lockupAddress: string;
 
   // For blinded Liquid reverse swaps
