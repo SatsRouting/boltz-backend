@@ -121,7 +121,7 @@ type CreatedSwap = {
   swapTree?: SwapTreeSerializer.SerializedTree;
 
   // Specified when either Ether or ERC20 tokens or swapped to Lightning
-  // So that the user can specify the claim address (Boltz) in the lockup transaction to the contract
+  // So that the user can specify the claim address (SatsRouting) in the lockup transaction to the contract
   claimAddress?: string;
 
   // For blinded Liquid swaps
@@ -141,7 +141,7 @@ type CreatedOnchainSwap = {
   refundAddress?: string;
 
   // This is either the generated address for Bitcoin like chains, or the address of the contract
-  // to which Boltz will send the lockup transaction for Ether and ERC20 tokens
+  // to which SatsRouting will send the lockup transaction for Ether and ERC20 tokens
   lockupAddress: string;
 
   // For blinded Liquid reverse swaps
@@ -743,16 +743,20 @@ class SwapManager {
         // to emit it before trying to claim the swap
         emitSwapInvoiceSet(updatedSwap.id);
 
-        // If the onchain coins were sent already and the lockup transaction is confirmed
-        // the swap should be settled directly
+        // If the onchain coins were sent already and the lockup transaction is
+        // confirmed the swap should be settled directly. The confirmed chain
+        // event was consumed before the invoice existed, so let the nursery
+        // re-validate the amounts: it settles within the accepted overpayment
+        // tolerance and otherwise fails the swap explicitly. Previously a
+        // direct settle only happened on an exact amount match, silently
+        // leaving any (even 1 sat) mismatch stuck in "invoice.set" until the
+        // invoice expired.
         if (
           updatedSwap.lockupTransactionId &&
-          statusBeforeUpdate === SwapUpdateEvent.TransactionConfirmed &&
-          swap.expectedAmount === swap.onchainAmount &&
-          updatedSwap.expectedAmount === updatedSwap.onchainAmount
+          statusBeforeUpdate === SwapUpdateEvent.TransactionConfirmed
         ) {
           try {
-            await this.nursery.attemptSettleSwap(
+            await this.nursery.settleConfirmedLockup(
               receivingCurrency,
               updatedSwap,
             );

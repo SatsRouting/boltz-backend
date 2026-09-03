@@ -103,7 +103,7 @@ struct UnblindedAssetPair<'a> {
 }
 
 /// Construct a transaction that rescues a non-L-BTC asset accidentally
-/// sent to a Boltz Taproot swap output.
+/// sent to a SatsRouting Taproot swap output.
 ///
 /// Spends `asset_pair` (the stuck asset) and `lbtc_pair` (an L-BTC input
 /// to pay the fee), sending the asset to its destination and the L-BTC

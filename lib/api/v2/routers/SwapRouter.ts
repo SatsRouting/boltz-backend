@@ -317,10 +317,10 @@ class SwapRouter extends RouterBase {
      *           $ref: '#/components/schemas/SwapTree'
      *         claimPublicKey:
      *           type: string
-     *           description: Public key of Boltz that will be used to sweep the onchain HTLC
+     *           description: Public key of SatsRouting that will be used to sweep the onchain HTLC
      *         claimAddress:
      *           type: string
-     *           description: EVM address of Boltz that will be used to claim the onchain HTLC. Only set for swaps to EVM based chains
+     *           description: EVM address of SatsRouting that will be used to claim the onchain HTLC. Only set for swaps to EVM based chains
      *         timeoutBlockHeight:
      *           type: number
      *           description: Timeout block height of the onchain HTLC
@@ -848,10 +848,10 @@ class SwapRouter extends RouterBase {
      *           description: Preimage of the invoice for the Submarine Swap encoded as HEX
      *         pubNonce:
      *           type: string
-     *           description: Public nonce of Boltz encoded as HEX
+     *           description: Public nonce of SatsRouting encoded as HEX
      *         publicKey:
      *           type: string
-     *           description: Public key of Boltz encoded as HEX
+     *           description: Public key of SatsRouting encoded as HEX
      *         transactionHash:
      *           type: string
      *           description: Hash of the transaction that should be signed
@@ -896,7 +896,7 @@ class SwapRouter extends RouterBase {
      * /swap/submarine/{id}/claim:
      *   post:
      *     tags: [Submarine Swap]
-     *     description: Send Boltz the clients partial signature for a cooperative Submarine Swap claim transaction
+     *     description: Send SatsRouting the clients partial signature for a cooperative Submarine Swap claim transaction
      *     parameters:
      *       - in: path
      *         name: id
@@ -1100,7 +1100,7 @@ class SwapRouter extends RouterBase {
      *           description: HTLC address in which coins will be locked
      *         refundPublicKey:
      *           type: string
-     *           description: Public key of Boltz that will be used to refund UTXO HTLCs
+     *           description: Public key of SatsRouting that will be used to refund UTXO HTLCs
      *         refundAddress:
      *           type: string
      *           description: Address that should be specified as refund address for EVM lockup transactions
@@ -1406,7 +1406,7 @@ class SwapRouter extends RouterBase {
      *               properties:
      *                 server:
      *                   type: number
-     *                   description: Absolute miner fee that Boltz charges
+     *                   description: Absolute miner fee that SatsRouting charges
      *                 user:
      *                   type: object
      *                   required: ["claim", "lockup"]
@@ -1512,7 +1512,7 @@ class SwapRouter extends RouterBase {
      *           description: HTLC address in which coins will be locked
      *         serverPublicKey:
      *           type: string
-     *           description: Public key of Boltz that is used in the aggregated public key
+     *           description: Public key of SatsRouting that is used in the aggregated public key
      *         timeoutBlockHeight:
      *           type: number
      *           description: Timeout block height of the onchain HTLC
@@ -1759,7 +1759,7 @@ class SwapRouter extends RouterBase {
      * @openapi
      * /swap/chain/{id}/claim:
      *   post:
-     *     description: Send Boltz a partial signature for its claim transaction and get a partial signature for the clients claim in return. If client claimed already, only providing "signature" is required and an empty object is returned.
+     *     description: Send SatsRouting a partial signature for its claim transaction and get a partial signature for the clients claim in return. If client claimed already, only providing "signature" is required and an empty object is returned.
      *     tags: [Chain Swap]
      *     parameters:
      *       - in: path

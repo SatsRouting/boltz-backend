@@ -4,7 +4,7 @@
 [![docs.rs](https://docs.rs/boltz-core/badge.svg)](https://docs.rs/boltz-core)
 
 Atomic swap primitives for **Bitcoin** and **Liquid** (Elements), used by the
-[Boltz](https://boltz.exchange) backend.
+[SatsRouting](https://satsrouting.exchange) backend.
 
 `boltz-core` is the low-level cryptographic toolkit for building and settling
 atomic swaps on-chain. It is the swap cryptography on its own — not a Boltz API

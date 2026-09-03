@@ -1,6 +1,6 @@
 //! Atomic swap primitives for Bitcoin and Liquid (Elements).
 //!
-//! `boltz-core` provides the building blocks the [Boltz](https://boltz.exchange)
+//! `boltz-core` provides the building blocks the [SatsRouting](https://satsrouting.exchange)
 //! backend uses to construct, sign, and rescue submarine and reverse swaps on
 //! Bitcoin and Liquid. The crate is split along two axes:
 //!

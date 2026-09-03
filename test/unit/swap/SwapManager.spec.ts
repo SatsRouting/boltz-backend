@@ -951,7 +951,7 @@ describe('SwapManager', () => {
       }
     });
 
-    manager.nursery.attemptSettleSwap = mockAttemptSettleSwap;
+    manager.nursery.settleConfirmedLockup = mockAttemptSettleSwap;
 
     swap.lockupTransactionId =
       '1558d179d9e3de706997e3b6bb33f704a5b8086b27538fd04ef5e313467333b8';
@@ -1126,7 +1126,7 @@ describe('SwapManager', () => {
     const emitSwapInvoiceSet = jest.fn().mockImplementation();
 
     const mockAttemptSettleSwap = jest.fn().mockResolvedValue(undefined);
-    manager.nursery.attemptSettleSwap = mockAttemptSettleSwap;
+    manager.nursery.settleConfirmedLockup = mockAttemptSettleSwap;
     SwapRepository.setInvoice = jest
       .fn()
       .mockImplementation(async (updatedSwap: Swap) => {
@@ -1257,7 +1257,7 @@ describe('SwapManager', () => {
     const attemptSettleSwap = jest.fn().mockImplementation(async () => {
       persistedSwap.status = SwapUpdateEvent.InvoicePending;
     });
-    manager.nursery.attemptSettleSwap = attemptSettleSwap;
+    manager.nursery.settleConfirmedLockup = attemptSettleSwap;
 
     const fees = {
       baseFee: 100,
