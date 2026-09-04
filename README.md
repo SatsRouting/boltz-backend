@@ -3,11 +3,11 @@
 [![CI](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/BoltzExchange/boltz-backend/actions/workflows/ci.yml)
 [![Version](https://img.shields.io/npm/v/boltz-backend.svg)](https://www.npmjs.com/package/boltz-backend)
 
-This is the source of the fork of the official Boltz Backend. It enables **non-custodial** swaps between different Bitcoin layers. Boltz Backend exposes a RESTful HTTP API that can be used to query information like supported pairs as well as to create and monitor swaps.
+This is the source of the fork of the official Boltz Backend. It has been fixed and partially refactored and rebranded as SatsRouting. It enables **non-custodial** swaps between different Bitcoin layers. Boltz Backend exposes a RESTful HTTP API that can be used to query information like supported pairs as well as to create and monitor swaps. Shitcoin support has been disabled in running instance at the moment.
 
 ## Documentation
 
-See the [Satsrouting API documentation](https://github.com/SatsRouting/boltz-backend).
+See the [SatsRouting API documentation](https://github.com/SatsRouting/satsrouting-api-docs).
 
 ## Security
 
