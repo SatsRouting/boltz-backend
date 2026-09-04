@@ -7,7 +7,7 @@ This is the source of the fork of the official Boltz Backend. It enables **non-c
 
 ## Documentation
 
-See the [Boltz API documentation](https://docs.boltz.exchange/v/api).
+See the [Satsrouting API documentation](https://github.com/SatsRouting/boltz-backend).
 
 ## Security
 
