@@ -1946,7 +1946,7 @@ class Service {
       onchainTimeoutBlockDelta,
     );
 
-    // Add 25 blocks (mx536 12/11/2026: era 15, vedi incidente yB5rc9vIk861; LND holdexpirydelta default 18) to the delta for same currency swaps and 25% for cross chain ones as buffer
+    // Add 25 blocks to the delta for same currency swaps and 25% for cross chain ones as buffer
     lightningTimeoutBlockDelta +=
       sending === receiving ? 25 : Math.ceil(lightningTimeoutBlockDelta * 0.25);
 
