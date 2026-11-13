@@ -1940,15 +1940,17 @@ class Service {
         args.version,
       );
 
-    let lightningTimeoutBlockDelta = TimeoutDeltaProvider.convertBlocks(
-      sending,
-      receiving,
-      onchainTimeoutBlockDelta,
+    // Hold invoice buffer: ask for enough blocks beyond the on-chain timeout
+    // that lnd keeps holding the HTLC until the service's refund can confirm.
+    // See TimeoutDeltaProvider.addBuffer.
+    const lightningTimeoutBlockDelta = TimeoutDeltaProvider.addBuffer(
+      TimeoutDeltaProvider.convertBlocks(
+        sending,
+        receiving,
+        onchainTimeoutBlockDelta,
+      ),
+      sending === receiving,
     );
-
-    // Add 15 blocks to the delta for same currency swaps and 25% for cross chain ones as buffer
-    lightningTimeoutBlockDelta +=
-      sending === receiving ? 15 : Math.ceil(lightningTimeoutBlockDelta * 0.25);
 
     const rate = getRate(pairRate, side, true);
     const feePercent = this.rateProvider.feeProvider.getPercentageFee(

@@ -57,6 +57,9 @@ type HopHint = {
 type Htlc = {
   valueMsat: number;
   state: HtlcState;
+  // Absolute block height at which this HTLC expires. Reported by lnd;
+  // clients that do not report it leave this undefined.
+  expiryHeight?: number;
 };
 
 type Invoice = {
